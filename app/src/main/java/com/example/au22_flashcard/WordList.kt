@@ -10,7 +10,7 @@ class WordList() {
 
 
     fun initializeWords() {
-        val word = Word("Hello", "Hej")
+        val word = Word(english = "Hello", "Hej")
         wordList.add(word)
         wordList.add(Word("Good bye", "Hej då"))
         wordList.add(Word("Thank you", "Tack"))
