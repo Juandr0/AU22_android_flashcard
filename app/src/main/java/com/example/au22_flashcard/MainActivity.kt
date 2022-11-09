@@ -24,8 +24,13 @@ class MainActivity : AppCompatActivity() {
 
         wordView = findViewById(R.id.wordTextView)
         addWordsButton = findViewById(R.id.main_addWordsBtn)
-
         showNewWord()
+
+
+
+
+
+
         wordView.setOnClickListener {
             revealTranslation()
         }
@@ -33,6 +38,12 @@ class MainActivity : AppCompatActivity() {
         addWordsButton.setOnClickListener {
             addWordActivity()
         }
+    }
+
+
+
+    fun addWordsToDb(){
+
     }
 
     fun addWordActivity() {
@@ -46,7 +57,6 @@ class MainActivity : AppCompatActivity() {
 
 
     fun showNewWord() {
-
         currentWord = wordList.getNewWord()
         wordView.text = currentWord?.swedish
     }
