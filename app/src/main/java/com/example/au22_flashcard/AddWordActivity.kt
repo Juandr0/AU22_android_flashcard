@@ -16,14 +16,17 @@ class AddWordActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_add_word)
+
+
+        db = AppDatabase.getInstance(this)
+
         saveBtn = findViewById(R.id.addWord_saveButton)
         backBtn = findViewById(R.id.addWord_backButton)
         enEditText = findViewById(R.id.addWord_englishEditText)
         svEditText = findViewById(R.id.addWord_swedishEditText)
-        db = AppDatabase.getInstance(this)
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_word)
 
         backBtn.setOnClickListener {
             finish()
