@@ -14,6 +14,7 @@
         android:layout_marginTop="188dp"
         android:hint="@string/english"
         android:minHeight="48dp"
+        android:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addWord_title" />
@@ -25,6 +26,7 @@
         android:layout_marginTop="32dp"
         android:hint="@string/swedish"
         android:minHeight="48dp"
+        android:backgroundTint="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/addWord_englishEditText"
@@ -47,6 +49,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:text="@string/save"
+        android:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -67,7 +70,6 @@
         android:layout_width="45dp"
         android:layout_height="61dp"
         android:layout_marginTop="-5dp"
-        android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toStartOf="@+id/addWord_swedishEditText"
         app:layout_constraintTop_toTopOf="@+id/addWord_swedishEditText"
         app:srcCompat="@drawable/sweden" />
@@ -77,7 +79,6 @@
         android:layout_width="45dp"
         android:layout_height="61dp"
         android:layout_marginTop="-5dp"
-        android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toStartOf="@+id/addWord_englishEditText"
         app:layout_constraintTop_toTopOf="@+id/addWord_englishEditText"
         app:srcCompat="@drawable/uk" />
