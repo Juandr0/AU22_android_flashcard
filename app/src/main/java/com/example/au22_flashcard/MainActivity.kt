@@ -44,8 +44,10 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
         }
 
         removeWordsButton.setOnClickListener {
-
+            val intent = Intent( this, RemoveWordActivity::class.java)
+            startActivity(intent)
         }
+
 
     }
 

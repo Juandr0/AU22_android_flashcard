@@ -47,6 +47,8 @@ class AddWordActivity : AppCompatActivity(), CoroutineScope {
             saveWordToDb()
             resetEditText()
         }
+
+
     }
 
     private fun resetEditText(){

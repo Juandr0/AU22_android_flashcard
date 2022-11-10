@@ -8,4 +8,8 @@
 
     <string name="english">Type the English word here</string>
     <string name="swedish">Type the Swedish word here</string>
+
+    <string name="word_to_delete">Type the word you wish to delete from the database</string>
+    <string name="remove_a_word">Remove a word</string>
+    <string name="remove">Remove</string>
 </resources>
