@@ -20,10 +20,5 @@ interface WordDao {
     @Query("SELECT * FROM word_table" )
     fun getAllWords() : List<Word>
 
-    /*
-    @Query("SELECT * FROM word_table WHERE ")
-    fun getSwedishWords() : List<Word>
 
-    fun getEnglishWords() : List<Word>
-*/
 }

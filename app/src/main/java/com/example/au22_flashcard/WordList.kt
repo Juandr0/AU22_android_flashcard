@@ -16,7 +16,11 @@ class WordList() {
         wordList.add(Word("Thank you", "Tack"))
         wordList.add(Word("Welcome", "Välkommen"))
         wordList.add(Word("Computer", "Dator"))
+    }
 
+
+    fun addWord(word : Word){
+        wordList.add(word)
     }
 
 //    fun getNewWord() : Word {
@@ -61,6 +65,7 @@ class WordList() {
     // 4. ordet håller reda på om det redan är använt
 
 }
+
 
 
 
