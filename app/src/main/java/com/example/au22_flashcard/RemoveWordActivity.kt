@@ -1,15 +1,9 @@
 package com.example.au22_flashcard
 
-import android.content.Context
-import android.content.Intent
-import android.graphics.DashPathEffect
+import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.util.Log
-import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,12 +14,15 @@ class RemoveWordActivity : AppCompatActivity(), CoroutineScope {
     lateinit var job : Job
     lateinit var db : AppDatabase
     lateinit var goBackBtn : Button
+    lateinit var trashCan : ImageView
     var wordList = mutableListOf<Word>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_remove_word)
         goBackBtn = findViewById(R.id.remove_backButton)
+        trashCan = findViewById(R.id.remove_trashcan)
         db = AppDatabase.getInstance(this)
         job = Job()
 
@@ -37,7 +34,11 @@ class RemoveWordActivity : AppCompatActivity(), CoroutineScope {
 
 
 
+
+
+
     }
+
 
     override fun onResume() {
         super.onResume()
@@ -54,6 +55,12 @@ class RemoveWordActivity : AppCompatActivity(), CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
 
+    fun trashCanAnimation(){
+        trashCan.animate().apply {
+            duration = 1000
+            rotationYBy(360f)
+        }.start()
+    }
 
     fun getList() : Deferred<List<Word>> =
         async(Dispatchers.IO) {
@@ -74,6 +81,7 @@ class RemoveWordActivity : AppCompatActivity(), CoroutineScope {
                     removeWord(wordList[position])
                     adapter.removeItemFromReyclerView(position)
                     wordList.removeAt(position)
+                    trashCanAnimation()
             }
         })
     }
