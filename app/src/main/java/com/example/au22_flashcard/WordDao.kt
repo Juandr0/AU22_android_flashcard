@@ -20,4 +20,5 @@ interface WordDao {
     @Query("SELECT * FROM word_table" )
     fun getAllWords() : List<Word>
 
+
 }
