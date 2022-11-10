@@ -18,6 +18,9 @@ class WordList() {
         wordList.add(Word("Computer", "Dator"))
     }
 
+    fun clearList(){
+        wordList.clear()
+    }
 
     fun addWord(word : Word){
         wordList.add(word)

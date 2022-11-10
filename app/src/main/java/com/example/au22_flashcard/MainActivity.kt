@@ -13,6 +13,7 @@ import kotlin.coroutines.CoroutineContext
 class MainActivity : AppCompatActivity(), CoroutineScope {
 
     lateinit var addWordsButton : Button
+    lateinit var removeWordsButton : Button
     lateinit var wordView : TextView
     lateinit var db : AppDatabase
     private lateinit var job : Job
@@ -29,15 +30,10 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
 
         wordView = findViewById(R.id.wordTextView)
         addWordsButton = findViewById(R.id.main_addWordsBtn)
+        removeWordsButton = findViewById(R.id.main_removeWordsBtn)
         db = AppDatabase.getInstance(this)
         job = Job()
         showNewWord()
-
-        launch{
-            var newWordsList = getDbList()
-            val list = newWordsList.await()
-            addWords(list)
-        }
 
         wordView.setOnClickListener {
             revealTranslation()
@@ -47,10 +43,23 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
             addWordActivity()
         }
 
+        removeWordsButton.setOnClickListener {
+
+        }
+
     }
 
+    override fun onResume() {
+        super.onResume()
+        wordList.clearList()
+        wordList.initializeWords()
+        launch{
+            var newWordsList = getDbList()
+            val list = newWordsList.await()
+            addWords(list)
+        }
 
-
+    }
 
     fun getDbList() : Deferred<List<Word>> =
         async(Dispatchers.IO) {
@@ -63,7 +72,6 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
     fun addWords(list : List<Word>){
         for (word in list){
             wordList.addWord(word)
-            Log.d("!!!", word.swedish)
         }
 
 

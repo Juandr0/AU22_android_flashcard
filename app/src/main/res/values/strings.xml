@@ -4,6 +4,7 @@
     <string name="back">Go back</string>
     <string name="save">Save word</string>
     <string name="title">Enter a new word</string>
+    <string name="remove_word">Remove words</string>
 
     <string name="english">Type the English word here</string>
     <string name="swedish">Type the Swedish word here</string>
